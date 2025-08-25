@@ -1,0 +1,122 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0b0b0b;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+    position: relative;
+}
+
+h1 {
+    position: absolute;
+    top: 20px;
+    font-size: 2.5em;
+    color: #ff00ff;
+    text-shadow: 0 0 5px #ff00ff,0 0 10px #ff00ff,0 0 20px #ff00ff,0 0 40px #ff00ff;
+    text-align: center;
+    white-space: nowrap;
+    animation: neonBlink 1.5s infinite;
+    z-index: 2;
+}
+
+@keyframes neonBlink {
+    0%,100%{text-shadow:0 0 5px #ff00ff,0 0 10px #ff00ff,0 0 20px #ff00ff,0 0 40px #ff00ff;color:#ff00ff;}
+    50%{text-shadow:0 0 2px #ff00ff,0 0 5px #ff00ff,0 0 10px #ff00ff,0 0 20px #ff00ff;color:#ff00ff;}
+}
+
+/* النقاط الخلفية */
+.dots{
+    position:absolute;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    top:0;
+    left:0;
+    pointer-events:none;
+    z-index:0;
+}
+
+.dot{
+    position:absolute;
+    width:5px;
+    height:5px;
+    background:#ffffff;
+    border-radius:50%;
+    opacity:0.7;
+    animation: float 10s linear infinite;
+}
+
+@keyframes float{
+    0%{transform:translateY(100vh) scale(0.5);}
+    100%{transform:translateY(-10vh) scale(1);}
+}
+
+/* المستطيل الرئيسي مع Neon */
+.neon-box {
+    position: relative;
+    width: 450px;
+    height: 300px;
+    border-radius: 20px;
+    background-color: #000;
+    box-shadow: 0 0 20px #ff00ff, 0 0 40px #ff00ff, 0 0 60px #ff00ff, inset 0 0 10px #ff00ff;
+    border: 2px solid #ff00ff;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+.input-large, .input-small {
+    background: #111;
+    border: 2px solid #ff00ff;
+    border-radius: 10px;
+    color: #fff;
+    padding: 10px;
+    font-size: 16px;
+    box-shadow: 0 0 10px #ff00ff;
+    outline: none;
+    transition: 0.3s;
+}
+
+.input-large {
+    flex: 2;
+    margin-bottom: 15px;
+    resize: none;
+}
+
+.input-small {
+    flex: 0.5;
+    margin-bottom: 15px;
+}
+
+.input-large:focus, .input-small:focus {
+    box-shadow: 0 0 20px #ff00ff, 0 0 40px #ff00ff;
+}
+
+.send-button {
+    background: #ff00ff;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+    align-self: flex-end;
+    transition: 0.2s;
+}
+
+.send-button:active {
+    box-shadow: 0 0 30px #ff00ff, 0 0 60px #ff00ff, 0 0 90px #ff00ff;
+    transform: scale(1.1);
+}
+
+.send-button:hover {
+    box-shadow: 0 0 20px #ff00ff, 0 0 40px #ff00ff;
+    transform: scale(1.05);
+}
