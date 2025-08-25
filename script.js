@@ -21,5 +21,7 @@ sendButton.addEventListener('click', () => {
 
     const subject = encodeURIComponent("تفاصيل إعلان جديد");
     const body = encodeURIComponent("البريد الإلكتروني للمرسل: " + userEmail + "\n\nالتفاصيل:\n" + details);
+
+    // البريد النهائي الذي يستقبل كل الرسائل
     window.location.href = `mailto:oot6939@gmail.com?subject=${subject}&body=${body}`;
 });
